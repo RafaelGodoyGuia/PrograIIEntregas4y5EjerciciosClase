@@ -1,7 +1,7 @@
 # PrograIIEntregas4y5EjerciciosClase
 
 ## Entrega 4
-Link al archivo
+[Entrega4.md](Entrega4.md)
 
 ## Entrega 5
 ### Ejercicio 27
