@@ -16,4 +16,5 @@ que no hacía falta hacer el ejemplo del ejercicio 29, si lo quieres te lo hacem
 
 ### Ejercicio 30
 
-![captura test pasados](Practica5%2Fimage.png)
+![image.png](Practica5%2Fimage.png)
+![image2.png](Practica5%2Fimage2.png)
