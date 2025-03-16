@@ -1,5 +1,3 @@
-package dominio;
-
 import org.junit.jupiter.api.Test;
 
 class MatematicasTest {
