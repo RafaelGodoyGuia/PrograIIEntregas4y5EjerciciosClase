@@ -159,59 +159,101 @@ class MatematicasTest {
 
     @Test
     void generarSecuenciaOf_verificaContenido() {
-        // ... test code here ...
+        // Verifica que la secuencia generada por of sea correcta
+        IntStream secuencia = Matematicas.generarSecuenciaOf();
+        int[] esperado = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        assertArrayEquals(esperado, secuencia.toArray(), "La secuencia generada por of debería ser [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]");
     }
 
     @Test
     void generarSecuenciaRange_verificaContenido() {
-        // ... test code here ...
+        // Verifica que la secuencia generada por range sea correcta
+        IntStream secuencia = Matematicas.generarSecuenciaRange();
+        int[] esperado = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        assertArrayEquals(esperado, secuencia.toArray(), "La secuencia generada por range debería ser [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]");
     }
 
     @Test
     void generarSecuenciaIterate_verificaContenido() {
-        // ... test code here ...
+        // Verifica que la secuencia generada por iterate sea correcta
+        IntStream secuencia = Matematicas.generarSecuenciaIterate();
+        int[] esperado = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        assertArrayEquals(esperado, secuencia.toArray(), "La secuencia generada por iterate debería ser [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]");
     }
 
     @Test
     void generarNumerosAleatorios_verificaCantidadYRango() {
-        // ... test code here ...
+        // Verifica que se generen 10 números aleatorios en el rango [0, 9)
+        DoubleStream numerosAleatorios = Matematicas.generarNumerosAleatorios();
+        long cantidad = numerosAleatorios.count();
+        assertEquals(10, cantidad, "Deberían generarse 10 números aleatorios");
+
+        // Verifica que los números estén dentro del rango [0, 9)
+        numerosAleatorios = Matematicas.generarNumerosAleatorios();
+        assertTrue(numerosAleatorios.allMatch(n -> n >= 0 && n < 9), "Los números aleatorios deberían estar en el rango [0, 9)");
     }
 
-    // ========== OPERACIONES AVANZADAS ==========
+    // ========== OPERACIONES AVANZADAS PRODUCTO A ESCALAR ==========
 
     @Test
     void productoEscalar_vectoresMismoTamano() {
-        // ... test code here ...
+        // Cuando los vectores tienen el mismo tamaño, el producto escalar debería calcularse correctamente
+        List<Integer> v1 = List.of(1, 2, 3);
+        List<Integer> v2 = List.of(4, 5, 6);
+        int resultado = Matematicas.productoEscalar(v1, v2);
+        assertEquals(32, resultado, "El producto escalar de [1, 2, 3] y [4, 5, 6] debería ser 32");
     }
 
     @Test
     void productoEscalar_vectoresConNegativos() {
-        // ... test code here ...
+        // Cuando los vectores contienen números negativos, el producto escalar debería calcularse correctamente
+        List<Integer> v1 = List.of(1, -2, 3);
+        List<Integer> v2 = List.of(4, 5, -6);
+        int resultado = Matematicas.productoEscalar(v1, v2);
+        assertEquals(-12, resultado, "El producto escalar de [1, -2, 3] y [4, 5, -6] debería ser -12");
     }
 
     @Test
     void productoEscalar_vectoresVacios() {
-        // ... test code here ...
+        // Cuando los vectores están vacíos, el producto escalar debería ser 0
+        List<Integer> v1 = List.of();
+        List<Integer> v2 = List.of();
+        int resultado = Matematicas.productoEscalar(v1, v2);
+        assertEquals(0, resultado, "El producto escalar de vectores vacíos debería ser 0");
     }
+
+    // ========== OPERACIONES AVANZADAS INTEGRAL ==========
 
     @Test
     void integral_funcionLineal() {
-        // ... test code here ...
+        // Cuando la función es lineal, el resultado debería ser el área del trapecio
+        DoubleUnaryOperator funcion = x -> 2 * x; // Función lineal f(x) = 2x
+        double resultado = Matematicas.integral(funcion, 0, 5, 1000);
+        assertEquals(25.0, resultado, 0.01, "La integral de f(x) = 2x en [0, 5] debería ser 25");
     }
 
     @Test
     void integral_funcionConstante() {
-        // ... test code here ...
+        // Cuando la función es constante, el resultado debería ser el área del rectángulo
+        DoubleUnaryOperator funcion = x -> 4.0; // Función constante f(x) = 4
+        double resultado = Matematicas.integral(funcion, 0, 5, 1000);
+        assertEquals(20.0, resultado, 0.01, "La integral de f(x) = 4 en [0, 5] debería ser 20");
     }
 
     @Test
     void integral_intervaloCero() {
-        // ... test code here ...
+        // Cuando el intervalo es cero (inicio == fin), el resultado debería ser 0
+        DoubleUnaryOperator funcion = x -> x * x; // Función cuadrática f(x) = x^2
+        double resultado = Matematicas.integral(funcion, 3, 3, 1000);
+        assertEquals(0.0, resultado, 0.01, "La integral de f(x) = x^2 en [3, 3] debería ser 0");
     }
 
     @Test
     void integral_intervaloReverso() {
-        // ... test code here ...
+        // Cuando el intervalo es inverso (inicio > fin), el resultado debería ser negativo
+        DoubleUnaryOperator funcion = x -> x; // Función lineal f(x) = x
+        double resultado = Matematicas.integral(funcion, 5, 0, 1000);
+        assertEquals(-12.5, resultado, 0.01, "La integral de f(x) = x en [5, 0] debería ser -12.5");
     }
 
 
@@ -222,48 +264,66 @@ class MatematicasTest {
 
     @Test
     void terminoFibonacci_posicionCero() {
-        // ... test code here ...
+        // El término en la posición 1 de la sucesión de Fibonacci es 1
+        long resultado = Matematicas.terminoFibonacci(1);
+        assertEquals(1, resultado, "El término en la posición 1 de Fibonacci debería ser 1");
     }
 
     @Test
     void terminoFibonacci_posicionUno() {
-        // ... test code here ...
+        // El término en la posición 0 de la sucesión de Fibonacci es 0
+        long resultado = Matematicas.terminoFibonacci(0);
+        assertEquals(0, resultado, "El término en la posición 0 de Fibonacci debería ser 0");
     }
 
     @Test
     void terminoFibonacci_posicionDos() {
-        // ... test code here ...
+        // El término en la posición 2 de la sucesión de Fibonacci es 1
+        long resultado = Matematicas.terminoFibonacci(2);
+        assertEquals(1, resultado, "El término en la posición 2 de Fibonacci debería ser 1");
     }
 
     @Test
     void terminoFibonacci_posicionTres() {
-        // ... test code here ...
+        // El término en la posición 3 de la sucesión de Fibonacci es 2
+        long resultado = Matematicas.terminoFibonacci(3);
+        assertEquals(2, resultado, "El término en la posición 3 de Fibonacci debería ser 2");
     }
 
     @Test
     void terminoFibonacci_posicionDiez() {
-        // ... test code here ...
+        // El término en la posición 10 de la sucesión de Fibonacci es 55
+        long resultado = Matematicas.terminoFibonacci(10);
+        assertEquals(55, resultado, "El término en la posición 10 de Fibonacci debería ser 55");
     }
 
     // ========== UTILIDADES MATEMÁTICAS ==========
 
     @Test
     void generarPares_maximoPositivoPar() {
-        // ... test code here ...
+        // Cuando el máximo es positivo y par, la lista debería contener todos los pares hasta el máximo
+        List<Integer> resultado = Matematicas.generarPares(8);
+        assertEquals(List.of(0, 2, 4, 6, 8), resultado, "La lista debería contener los números pares hasta 8 cuando el máximo es 8");
     }
 
     @Test
     void generarPares_maximoPositivoImpar() {
-        // ... test code here ...
+        // Cuando el máximo es positivo e impar, la lista debería contener todos los pares hasta el máximo
+        List<Integer> resultado = Matematicas.generarPares(7);
+        assertEquals(List.of(0, 2, 4, 6), resultado, "La lista debería contener los números pares hasta 6 cuando el máximo es 7");
     }
 
     @Test
     void generarPares_maximoCero() {
-        // ... test code here ...
+        // Cuando el máximo es cero, el único número par en el rango es el 0
+        List<Integer> resultado = Matematicas.generarPares(0);
+        assertEquals(List.of(0), resultado, "La lista debería contener solo el número 0 cuando el máximo es 0");
     }
 
     @Test
     void generarPares_maximoNegativo() {
-        // ... test code here ...
+        // Cuando el máximo es negativo, no debería haber números pares en el rango
+        List<Integer> resultado = Matematicas.generarPares(-5);
+        assertTrue(resultado.isEmpty(), "La lista debería estar vacía cuando el máximo es negativo");
     }
 }
