@@ -89,7 +89,7 @@ public class Matematicas {
     public static double integral(DoubleUnaryOperator funcion, double inicio, double fin, int intervalos) {
         double paso = (fin - inicio) / intervalos;
         return IntStream.range(0, intervalos)
-                .mapToDouble(i -> funcion.applyAsDouble(inicio + i * paso) * paso)
+                .mapToDouble(i -> funcion.applyAsDouble(inicio + (i + 0.5) * paso) * paso)
                 .sum();
     }
 

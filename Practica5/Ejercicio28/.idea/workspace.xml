@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188edbe6-2d9e-4dc8-9693-1533464db013" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="188edbe6-2d9e-4dc8-9693-1533464db013" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2uJo7CmAmF2RtATQfXy6NQWESuC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,17 +23,74 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.MatematicasTest.executor": "Run",
+    "JUnit.MatematicasTest.integral_funcionLineal.executor": "Run",
+    "JUnit.MatematicasTest.integral_intervaloReverso.executor": "Run",
+    "JUnit.MatematicasTest.productoEscalar_vectoresConNegativos.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Eleusis/Desktop/Ingeniería de Sistemas de Información/Programación II/PrograIIEntrega3Clase"
+    "last_opened_file_path": "C:/Users/Alejandro Santamaría/OneDrive - Universidad de Burgos/Escritorio/Uni/PrograII/Ejercicios/EjerciciosClase/PrograIIEntregas4y5EjerciciosClase/Practica5/Ejercicio28",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Eleusis\Desktop\Ingeniería de Sistemas de Información\Programación II\PrograIIEntregas4y5EjerciciosClase\PrograIIEntregas4y5EjerciciosClase\src\domain\java" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MatematicasTest.integral_intervaloReverso">
+    <configuration name="MatematicasTest.integral_funcionLineal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrograIIEntregas4y5EjerciciosClase" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatematicasTest" />
+      <option name="METHOD_NAME" value="integral_funcionLineal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatematicasTest.integral_intervaloReverso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrograIIEntregas4y5EjerciciosClase" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatematicasTest" />
+      <option name="METHOD_NAME" value="integral_intervaloReverso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatematicasTest.productoEscalar_vectoresConNegativos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PrograIIEntregas4y5EjerciciosClase" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatematicasTest" />
+      <option name="METHOD_NAME" value="productoEscalar_vectoresConNegativos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MatematicasTest.integral_intervaloReverso" />
+        <item itemvalue="JUnit.MatematicasTest.integral_funcionLineal" />
+        <item itemvalue="JUnit.MatematicasTest.productoEscalar_vectoresConNegativos" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,7 +100,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741975874245</updated>
+      <workItem from="1742141473850" duration="1865000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

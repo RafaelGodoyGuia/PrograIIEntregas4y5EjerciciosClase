@@ -1,8 +1,13 @@
+import dominio.Matematicas;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.DoubleUnaryOperator;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,146 +18,167 @@ class MatematicasTest {
 
     @Test
     void obtenerListaPar_listaConParesEImpares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> outputEsperado = Arrays.asList(2, 4, 6, 8);
+        assertEquals(outputEsperado, Matematicas.obtenerListaPar(lista));
     }
 
     @Test
     void obtenerListaPar_listaSoloImpares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(1, 3, 5 ,7 , 9);
+        List<Integer> esperado = Collections.emptyList();
+        assertEquals(esperado, Matematicas.obtenerListaPar(lista));
     }
 
     @Test
     void obtenerListaPar_listaSoloPares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(2, 4, 6, 8);
+        List<Integer> esperado = Arrays.asList(2, 4, 6, 8);
+        assertEquals(esperado, Matematicas.obtenerListaPar(lista));
     }
 
     @Test
     void obtenerListaPar_listaVacia() {
-        // ... test code here ...
+        List<Integer> lista = Collections.emptyList();
+        List<Integer> esperado = Collections.emptyList();
+        assertEquals(esperado, Matematicas.obtenerListaPar(lista));
     }
 
     @Test
     void sumaParesLista_listaConParesEImpares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        int esperado = 2 + 4 + 6 + 8;
+        assertEquals(esperado, Matematicas.sumaParesLista(lista));
     }
 
     @Test
     void sumaParesLista_listaSoloImpares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(1, 3, 5, 7, 9);
+        int esperado = 0;
+        assertEquals(esperado, Matematicas.sumaParesLista(lista));
     }
 
     @Test
     void sumaParesLista_listaSoloPares() {
-        // ... test code here ...
+        List<Integer> lista = Arrays.asList(2, 4, 6, 8);
+        int esperado = 2 + 4 + 6 + 8;
+        assertEquals(esperado, Matematicas.sumaParesLista(lista));
     }
 
     @Test
     void sumaParesLista_listaVacia() {
-        // ... test code here ...
+        List<Integer> lista = Collections.emptyList();
+        int esperado = 0;
+        assertEquals(esperado, Matematicas.sumaParesLista(lista));
     }
 
     // ========== OPERACIONES NUMÉRICAS ==========
 
     @Test
     void potencia_baseCero() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.potencia(0, 3));
     }
 
     @Test
     void potencia_exponenteCero() {
-        // ... test code here ...
+        assertEquals(1, Matematicas.potencia(5, 0));
     }
 
     @Test
     void potencia_basePositiva_exponentePositivo() {
-        // ... test code here ...
+        assertEquals(8, Matematicas.potencia(2, 3));
     }
 
     @Test
     void potencia_baseNegativa_exponentePositivo() {
-        // ... test code here ...
+        assertEquals(-8, Matematicas.potencia(-2, 3));
     }
 
     @Test
     void sumaNumerosConsecutivos_nPositivo() {
-        // ... test code here ...
+        assertEquals(1 + 2 + 3 + 4 + 5, Matematicas.sumaNumerosConsecutivos(5));
     }
 
     @Test
     void sumaNumerosConsecutivos_nCero() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.sumaNumerosConsecutivos(0));
     }
 
     @Test
     void sumaNumerosConsecutivos_nNegativo() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.sumaNumerosConsecutivos(0));
     }
 
     @Test
     void sumaParesHasta_limitePositivoPar() {
-        // ... test code here ...
+        assertEquals(12, Matematicas.sumaParesHasta(6));
     }
 
     @Test
     void sumaParesHasta_limitePositivoImpar() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.sumaParesHasta(7));
     }
 
     @Test
     void sumaParesHasta_limiteCero() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.sumaParesHasta(0));
     }
 
     @Test
     void sumaParesHasta_limiteNegativo() {
-        // ... test code here ...
+        assertEquals(0, Matematicas.sumaParesHasta(-1));
     }
 
     @Test
     void factorial_cero() {
-        // ... test code here ...
+        assertEquals(1, Matematicas.factorial(0));
     }
 
     @Test
     void factorial_uno() {
-        // ... test code here ...
+        assertEquals(1, Matematicas.factorial(1));
     }
 
     @Test
     void factorial_positivo() {
-        // ... test code here ...
+        assertEquals(5 * 4 * 3 * 2, Matematicas.factorial(5));
     }
 
     @Test
     void factorial_negativo() {
-        // ... test code here ...
+        assertEquals(1, Matematicas.factorial(-1));
     }
 
     // ========== ESTADÍSTICA ==========
 
     @Test
     void media_listaConNumeros() {
-        // ... test code here ...
+        List<Double> numeros = Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
+        assertEquals(3.0, Matematicas.media(numeros), 0.001);
     }
 
     @Test
     void media_listaVacia() {
-        // ... test code here ...
+        List<Double> numeros = Collections.emptyList();
+        assertEquals(0.0, Matematicas.desviacionTipica(numeros), 0.001);
     }
 
     @Test
     void desviacionTipica_listaConNumeros() {
-        // ... test code here ...
+        List<Double> numeros = Arrays.asList(2.0, 3.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0);
+        assertEquals(2.0, Matematicas.desviacionTipica(numeros), 0.001);
     }
 
     @Test
     void desviacionTipica_listaVacia() {
-        // ... test code here ...
+        List<Double> numeros = Collections.emptyList();
+        assertEquals(0.0, Matematicas.desviacionTipica(numeros), 0.001);
     }
 
     @Test
     void desviacionTipica_listaConUnNumero() {
-        // ... test code here ...
+        List<Double> numeros = Arrays.asList(5.0);
+        assertEquals(0.0, Matematicas.desviacionTipica(numeros), 0.001);
     }
 
     // ========== GENERACIÓN DE STREAMS ==========
@@ -210,7 +236,7 @@ class MatematicasTest {
         List<Integer> v1 = List.of(1, -2, 3);
         List<Integer> v2 = List.of(4, 5, -6);
         int resultado = Matematicas.productoEscalar(v1, v2);
-        assertEquals(-12, resultado, "El producto escalar de [1, -2, 3] y [4, 5, -6] debería ser -12");
+        assertEquals(-24, resultado, "El producto escalar de [1, -2, 3] y [4, 5, -6] debería ser -24");
     }
 
     @Test
