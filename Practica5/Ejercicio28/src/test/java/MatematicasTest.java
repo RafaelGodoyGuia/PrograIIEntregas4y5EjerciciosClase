@@ -116,7 +116,7 @@ class MatematicasTest {
 
     @Test
     void sumaParesHasta_limitePositivoImpar() {
-        assertEquals(0, Matematicas.sumaParesHasta(7));
+        assertEquals(12, Matematicas.sumaParesHasta(7));
     }
 
     @Test
@@ -154,7 +154,7 @@ class MatematicasTest {
     @Test
     void media_listaConNumeros() {
         List<Double> numeros = Arrays.asList(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
-        assertEquals(3.0, Matematicas.media(numeros), 0.001);
+        assertEquals(5.0, Matematicas.media(numeros), 0.001);
     }
 
     @Test
@@ -166,7 +166,7 @@ class MatematicasTest {
     @Test
     void desviacionTipica_listaConNumeros() {
         List<Double> numeros = Arrays.asList(2.0, 3.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0);
-        assertEquals(2.0, Matematicas.desviacionTipica(numeros), 0.001);
+        assertEquals(2.088, Matematicas.desviacionTipica(numeros), 0.001);
     }
 
     @Test
